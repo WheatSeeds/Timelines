@@ -1,0 +1,20 @@
+@use "./../../../../shared/assets/styles/colors.scss" as *;
+@use "./../../../../shared/assets/styles/typography.scss" as *;
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: flex-start;
+  margin-left: 80px;
+}
+
+.counter {
+  color: $color-dark-blue;
+  @include font(pt-sans-regular-14);
+}
