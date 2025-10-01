@@ -12,9 +12,49 @@
   gap: 20px;
   align-self: flex-start;
   margin-left: 80px;
+  position: relative;
 }
 
 .counter {
   color: $color-dark-blue;
   @include font(pt-sans-regular-14);
+}
+.dots{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 96px;
+  top: 25px;
+}
+.dot{
+  width: 6px;
+  height: 6px;
+  background-color: $color-gray;
+  border-radius: 100%;
+  transition: all 0.2s ease, color 0.2s ease;
+  &:hover:not(:disabled) {
+    transform: scale(1.33);
+    background-color: $color-dark-blue;
+  }
+  border: none;
+}
+.dotActive{
+  width: 8px;
+  height: 8px;
+  background-color: $color-dark-blue;
+  border-radius: 100%;
+  border: none;
+}
+
+@media (max-width: 1440px) {
+  .root {
+    order: 2;
+    margin-left: 20px;
+    gap: 11px;
+  }
+  .buttons{
+    gap: 8px;
+  }
 }

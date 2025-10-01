@@ -16,3 +16,15 @@
   align-items: center;
   position: relative
 }
+
+@media (max-width: 1440px) {
+  .root {
+    width: 100%;
+  }
+  .title{
+    margin-left: 20px;
+    width: clamp(123px, 25vw, 353px);
+    margin-top: clamp(59px, 8vw, 170px);
+    font-size: clamp(20px, 4vw, 56px);
+  }
+}

@@ -1,7 +1,10 @@
 import React from "react";
 
 import { SvgLeftArrowBig } from "../../../shared/assets/icons/ui/left-arrow-big";
+import { SvgLeftArrowMobile } from "../../../shared/assets/icons/ui/left-arrow-mobile";
 import { SvgRightArrowBig } from "../../../shared/assets/icons/ui/right-arrow-big";
+import { SvgRightArrowMobile } from "../../../shared/assets/icons/ui/right-arrow-mobile";
+import { useIsMobile } from "../../../shared/hooks/use-is-mobile";
 import PaginationButton from "../../../shared/ui/buttons/pagination-button/ui/pagination-button";
 import { getClasses } from "./styles/get-classes";
 
@@ -17,6 +20,7 @@ const NavBar = ({
   setCurrentTimeline,
 }: NavBarProps) => {
   const classes = getClasses();
+  const isMobile = useIsMobile(1440);
 
   const changeTimeline = (delta: number) => {
     setCurrentTimeline(
@@ -32,19 +36,33 @@ const NavBar = ({
       <div className={classes.cnButtons}>
         <PaginationButton
           onClick={() => changeTimeline(-1)}
-          variant={"primary"}
+          variant="primary"
           disabled={currentTimeline === 0}
         >
-          <SvgLeftArrowBig />
+          {isMobile ? <SvgLeftArrowMobile /> : <SvgLeftArrowBig />}
         </PaginationButton>
         <PaginationButton
           onClick={() => changeTimeline(1)}
-          variant={"primary"}
+          variant="primary"
           disabled={currentTimeline === limit - 1}
         >
-          <SvgRightArrowBig />
+          {isMobile ? <SvgRightArrowMobile /> : <SvgRightArrowBig />}
         </PaginationButton>
       </div>
+      {isMobile && (
+        <div className={classes.cnDots}>
+          {Array.from({ length: limit }).map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => setCurrentTimeline(idx)}
+              className={
+                idx === currentTimeline ? classes.cnDotActive : classes.cnDot
+              }
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

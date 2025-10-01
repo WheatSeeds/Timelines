@@ -29,6 +29,16 @@ const EventCarousel = ({ items }: EventCarouselProps) => {
         slidesPerView={3}
         modules={[Navigation]}
         navigation={true}
+        breakpoints={{
+          0: {
+            slidesPerView: 2,
+            spaceBetween: 25,
+          },
+          535: {
+            slidesPerView: 3,
+            spaceBetween: 35,
+          },
+        }}
         onBeforeInit={(swiper) => {
           const nav = swiper.params.navigation as any;
           if (nav) {

@@ -14,5 +14,11 @@
 .description {
   color: $color-dark-blue;
   @include font(pt-sans-regular-20-30);
-  width: 320px;
+  width: 100%;
+}
+
+@media (max-width: 1440px) {
+  .event {
+    width: 166px;
+  }
 }

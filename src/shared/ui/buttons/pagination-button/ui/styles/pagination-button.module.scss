@@ -4,6 +4,9 @@
 .root {
   @include font(pt-sans-regular-20-30);
   color: $color-dark-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .primary {
@@ -48,4 +51,16 @@
   }
 }
 
+@media (max-width: 1440px) {
+  .primary {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 1px solid $color-gray;
+
+    &:disabled {
+      border: 1px solid $color-light-gray;
+    }
+  }
+}
 

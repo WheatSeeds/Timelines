@@ -32,3 +32,9 @@
   position: absolute;
   top: 177px;
 }
+
+@media (max-width: 1440px) {
+  .lines {
+    display: none;
+  }
+}

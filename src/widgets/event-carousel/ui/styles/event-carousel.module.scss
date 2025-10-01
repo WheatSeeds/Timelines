@@ -6,6 +6,11 @@
   margin: 50px auto;
   position: relative;
 }
-
+@media (max-width: 1440px) {
+  .root {
+    width: calc(100vw - 20px);
+    padding-left: 20px;
+  }
+}
 
 

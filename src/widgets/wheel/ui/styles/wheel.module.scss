@@ -28,3 +28,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@media (max-width: 1440px) {
+  .wheel {
+    display: none;
+  }
+  .root {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}

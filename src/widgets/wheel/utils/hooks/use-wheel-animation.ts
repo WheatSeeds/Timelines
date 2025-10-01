@@ -37,8 +37,8 @@ export const useWheelAnimation = ({
           ease: "power2.inOut",
           onUpdate: function () {
             const rad = (this.targets()[0].angle * Math.PI) / 180;
-            const x = radius * Math.cos(rad) - 26;
-            const y = radius * Math.sin(rad) - 26;
+            const x = radius * Math.cos(rad) - 28;
+            const y = radius * Math.sin(rad) - 28;
 
             gsap.set(`#btn-${i}`, { x, y });
           },

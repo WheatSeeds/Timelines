@@ -12,3 +12,9 @@
 .btnNext {
   right: -80px;
 }
+
+@media (max-width: 1440px) {
+  .btn {
+    display: none;
+  }
+}
