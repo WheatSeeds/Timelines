@@ -11,6 +11,7 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.1.15",
     "@types/react-dom": "^19.1.9",
+    "classnames": "^2.5.1",
     "gsap": "^3.13.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -22,7 +23,8 @@
     "build": "webpack --mode production",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,scss,css}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,scss,css}\"",
+    "svg": "npx @svgr/cli ./src/shared/assets/icons/svg --config-file ./svgr.config.mjs "
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +46,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "@svgr/cli": "^8.1.0",
     "@typescript-eslint/eslint-plugin": "^8.44.1",
     "@typescript-eslint/parser": "^8.44.1",
     "clean-webpack-plugin": "^4.0.0",

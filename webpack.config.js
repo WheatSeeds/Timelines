@@ -15,9 +15,10 @@ module.exports = {
     static: "./dist",
     hot: true,
     port: 3000,
+    open: true,
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"],
   },
   module: {
     rules: [
@@ -27,7 +28,26 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.module\.scss$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                mode: "local",
+                localIdentName: "[name]__[local]--[hash:base64:5]",
+                namedExport: false,
+              },
+              esModule: false,
+            },
+          },
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.scss$/,
+        exclude: /\.module\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
